@@ -1,5 +1,19 @@
 $(document).ready(function() {
   position();
+  var celsius = true;
+  $('#button').on('click',function() {
+    var change = document.getElementById("temp").textContent;
+    var degrees = parseFloat(change);
+    if (celsius) {
+      degrees = toFahrenheit(degrees);
+      $('#button').text("F to C");
+    } else {
+      degrees = toCelsius(degrees);
+      $('#button').text("C to F");
+    }
+    celsius = !celsius;
+    $('#temp').text(degrees);
+  });
 });
 
 function position() {
@@ -8,15 +22,14 @@ function position() {
     url: "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDJFD_JVDG5KvB5nHfowcTLtQlX5qDsk8U", /*url a fazer request*/
     dataType:"json", /*tipo de dado a receber*/
     success: function (data) {
+      console.log(JSON.stringify(data));
       var latitude = data.location.lat;
       var longitude = data.location.lng;
-      $('#latitude').text(latitude);
-      $('#longitude').text(longitude);
       reverseGeocoding(latitude,longitude);
       weather(latitude,longitude);
     },
     error: function () {
-      $('#erro').text('Can\'t find coordinates');
+      $('#place').text('Couldn\'t find coordinates');
     }
   });
 }
@@ -32,7 +45,7 @@ function reverseGeocoding(lat,lng) {
       $('#place').text(place);
     },
     error: function () {
-      $('#erro2').text("Can\'t find city");
+      $('#place').text("Couldn\'t find city");
     }
   });
 }
@@ -51,11 +64,25 @@ function weather(lat,lng) {
       //$('#theDiv').prepend('<img id="theImg" src="theImg.png" />');
     },
     error: function () {
-      $('#erro3').text("Can\'t find weather");
+      $('#temp').text("Couldn\'t find weather");
     },
     beforeSend: function(xhr) {
       xhr.setRequestHeader("X-Mashape-Key", "Ey82Qs9cYemshOTkDjmdGHedDKT7p1lD10ljsntsa1dNilbP8V");
       xhr.setRequestHeader("Accept", "application/json");
     }
   });
+}
+
+function toFahrenheit(degrees) {
+  degrees = degrees * (9/5) + 32;
+  degrees = degrees * 10;
+  degrees = Math.round(degrees);
+  return degrees / 10;
+}
+
+function toCelsius(degrees) {
+  degrees = (degrees - 32) * (5/9);
+  degrees = degrees * 10;
+  degrees = Math.round(degrees);
+  return degrees / 10;
 }
