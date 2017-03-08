@@ -12,11 +12,19 @@
   </head>
   <body>
     <div class = "container-fluid">
-      <div class = "row" id = "inf"><div id = "temp"></div>&deg</div>
-      <div><button class = "btn btn-primary" id = "button"><div>C to F</div></button></div>
+      <div class = "row" id = "inf">
+        <div class = "col-xs-2" id = "temp"></div>
+        <div class = "col-xs-1" id = 'unity'>˚F</div>
+        <!--div class = "col-xs-1" id = 'icon'>˚F</div-->
+      </div>
+      <div>
+        <button class = "btn btn-primary" id = "button">
+          See in Celsius
+        </button>
+      </div>
       <div id = "cond"></div>
       <div id = "place"></div>
-  <!--  <div id="theDiv">Where is the image?</div> -->
+      <img alt="Weather Icon" id = "icon" src = "">
     </div>
     <script src="./script.js">
     </script>
