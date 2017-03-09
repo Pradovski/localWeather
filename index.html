@@ -12,19 +12,27 @@
   </head>
   <body>
     <div class = "container-fluid">
+      <h1 class = "text-center" id = "title">See local weather!</h1>
       <div class = "row" id = "inf">
-        <div class = "col-xs-2" id = "temp"></div>
-        <div class = "col-xs-1" id = 'unity'>˚F</div>
-        <!--div class = "col-xs-1" id = 'icon'>˚F</div-->
+        <div class="text-center">
+          <div id = "temp">
+          </div>
+          <div  id = 'unity'>˚F
+          </div>
+        </div>
       </div>
-      <div>
-        <button class = "btn btn-primary" id = "button">
+      <div class = "text-center">
+        <div id = "cond">
+        </div>
+        <img alt="Weather Icon" id = "icon">
+      </div>
+      <div id = "place">
+      </div>
+      <div id="a">
+        <button class = "btn btn-primary col-xs-2" id = "button">
           See in Celsius
         </button>
       </div>
-      <div id = "cond"></div>
-      <div id = "place"></div>
-      <img alt="Weather Icon" id = "icon" src = "">
     </div>
     <script src="./script.js">
     </script>

@@ -1,14 +1,54 @@
 #inf {
   font-size: 50px;
   /*font-family: ;*/
-  color: pink;
+  color: blue;
   padding-top: 100px;
 }
 
 #button {
+  background-color: #4099FF;
+  height:30px;
+  width:10%;
+  position:relative;
+  margin-left:45%;
+  margin-right:45%;
+  margin-top: 5%;
+}
 
+#a {
+  text-align: center;
 }
 
 #place {
+  text-align: center;
+}
 
+#title {
+  color: #FFDD40;
+  margin: auto;
+  width: 33vw;
+  margin-top: 5%;
+  border-radius: 25px;
+}
+
+#temp {
+  display: inline;
+}
+
+#unity {
+  display: inline;
+}
+
+#cond {
+  display: inline;
+}
+
+#icon {
+  display: inline;
+}
+
+body {
+  background-image: url("sky.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
