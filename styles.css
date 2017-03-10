@@ -15,7 +15,21 @@
   margin-top: 5%;
 }
 
-#a {
+#sup {
+  text-align: center;
+  margin-top: 2vh;
+}
+
+#support {
+  margin-top: -1%;
+  display:inline-block;
+  text-align: center;
+  width: 10%;
+  height: 5%;
+}
+
+#but {
+  margin-top: -2%;
   text-align: center;
 }
 
